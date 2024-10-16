@@ -7,13 +7,26 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
+      <Device name="Laptop" price='55,000 tk'></Device>
+      <Device name="Mobile" price='17,000 tk' ></Device>
+      <Device name="Watch" price='3,000 tk'></Device>
+      <Device name="Mouse" price='2,500 tk'></Device>
+      <Device></Device>
       <Person></Person>
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
-      <Person></Person>
-      <Student></Student>
+      <Student grade='7' score='99'></Student>
+      <Student grade='12' score='90'></Student>
+      <Student ></Student>
+      <Developer></Developer>
     </>
+  )
+}
+
+function Device (props){
+  // console.log(props);
+  return (
+    <div className='device'>
+      <h2>This device: {props.name} price: {props.price}</h2>
+    </div>
   )
 }
 
@@ -26,12 +39,28 @@ function Person (){
   )
 }
 
-function Student(){
+function Student({grade='1', score='0'}){
+  // console.log(props);
   return (
     <div className='student'>
       <h3>This is a student</h3>
-      <p>Name:</p>
-      <p>Age:</p>
+      <p>Class: {grade}</p>
+      <p>Score: {score} </p>
+    </div>
+  )
+}
+function Developer(){
+  const developerStyle ={
+    margin: '20px',
+    padding : '20px',
+    border : '4px solid blue',
+    borderRadius : '10px',
+    backgroundColor : 'skyblue'
+  }
+  return (
+    <div style={developerStyle}>
+      <h5>Devo Devo</h5>
+      <p>Coding:</p>
     </div>
   )
 }
